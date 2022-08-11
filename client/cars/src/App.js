@@ -1,26 +1,31 @@
-import { AboutSection } from "./components/AboutSection";
-import { AdTemplate } from "./components/AdTemplate";
-import { Footer } from "./components/Footer";
-import { PagesList } from "./components/PagesList";
-import { Sidebar } from "./components/Sidebar";
-import { TopMenu } from "./components/TopMenu";
+import "./App.css"
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Home } from "./components/Home/Home";
+import { About } from "./components/About/About";
+import { MenuArea } from "./components/MenuArea/MenuArea";
+import { Reservations } from "./components/Reservations/Reservations"
+import { Chefs } from "./components/Chefs/Chefs";
+import { Banner } from "./components/Banner/Banner";
+
 
 function App() {
-  let pageContentClass = "w3-main w3-content w3-padding"
-  let pageContentStyle = "max-width:1200px;margin-top:100px"
+
   return (
     <div>
-      <Sidebar />
-      <TopMenu />
-      <div className={pageContentClass} style={pageContentStyle}>
-        <AdTemplate />
-        <AdTemplate />
-        <AdTemplate />
-        <AdTemplate />
-        <PagesList />
-        <AboutSection />
+      <BrowserRouter>
+        <Header />
+        <Banner />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<MenuArea />} />
+          <Route path="/chefs" element={<Chefs />} />
+          <Route path="/reservations" element={<Reservations />} />
+        </Routes>
         <Footer />
-      </div>
+      </BrowserRouter>
     </div>
   );
 }
