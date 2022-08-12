@@ -29,7 +29,7 @@ export const Navigation = () => {
                                     <Link to="/meals/edit">Edit Meals</Link>
                                 </li>
                                 <li>
-                                    <Link to="/logout">Waiting for idea</Link>
+                                    <Link to="/addmeal">Add meal</Link>
                                 </li>
                                 <li>
                                     <Link to="/logout">Logout</Link>
@@ -45,7 +45,6 @@ export const Navigation = () => {
 
                     </ul>
                 </li>
-                {/* <li class=""><Link rel="sponsored" to="https://templatemo.com" target="_blank">External URL</Link></li> */}
                 <li className="scroll-to-section">
                     <Link to="/reservations">Contact Us</Link>
                 </li>

@@ -13,7 +13,7 @@ export const Menu = (props) => {
     const [queryMeals, setQueryMeals] = useState([]);
 
     const [meals, setMeals] = useState([]);
-    
+
     useEffect(() => {
         mealService.getAll()
             .then(res => {
@@ -22,7 +22,7 @@ export const Menu = (props) => {
     }, []);
 
     useEffect(() => {
-        setQueryMeals(meals.filter( x => x.type == query ))
+        setQueryMeals(meals.filter(x => x.type == query))
         console.log(queryMeals);
     }, [query]);
 
@@ -69,26 +69,21 @@ export const Menu = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-12">
-                                <section className="tabs-content">
-                                    {/* {query === 'breakfast'
-                                        ? <Breakfast />
-                                        : query === 'lunch'
-                                            ? <Lunch />
-                                            : query === 'dinner'
-                                                ? <Dinner />
-                                                : <Breakfast />} */}
-                                    {meals && meals.length > 0
-                                        ? query
-                                            ? queryMeals.map(meal => <Meal key={meal._id} meal={meal} />)
-                                            : meals.map(meal => <Meal key={meal._id} meal={meal} />)
-                                        : <h1>There are no meals for today.</h1>}
-                                </section>
+                            <div className="col-lg-24">
+                                <article class="leaderboard">
+                                    <main class="leaderboard profiles">
+                                        {meals && meals.length > 0
+                                            ? query
+                                                ? queryMeals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                                : meals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                            : <h1>There are no meals for today.</h1>}
+                                    </main>
+                                </article>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };

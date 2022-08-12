@@ -11,6 +11,7 @@ import { Banner } from "./components/Banner/Banner";
 import { Login } from "./components/Auth/Login";
 import { PrivateRoute } from "./components/Common/PrivateRoute";
 import { Logout } from "./components/Logout/Logout";
+import { AddMeal } from "./components/Menu/Meals/AddMeal/AddMeal";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/reservations" element={<Reservations />} />
                     <Route path="/login" element={<Login />} />
                     <Route element={<PrivateRoute />}>
+                        <Route path="/addmeal" element={<AddMeal />}/>
                         <Route path="/logout" element={<Logout />} />
                     </Route>
                 </Routes>

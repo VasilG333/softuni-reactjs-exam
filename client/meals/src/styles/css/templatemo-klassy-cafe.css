@@ -1413,13 +1413,15 @@ offers
   transition: all 0.3s;
 }
 #offers .tabs-content .tab-item {
-  position: relative;
+  position: left;
   margin-bottom: 60px;
 }
 #offers .tabs-content img {
   float: left;
   width: 100px;
   max-width: 100px;
+  height: 100px;
+  max-height: 100px;
   margin-right: 20px;
   border-radius: 5px;
 }
@@ -1436,19 +1438,12 @@ offers
   margin-right: 100px;
 }
 
-#offers .tabs-content .left-list {
-  margin-right: 15px;
-}
-
-#offers .tabs-content .right-list {
-  margin-left: 15px;
-}
-
 #offers .tabs-content .price h6 {
-  position: absolute;
-  top: 15px;
-  right: 0;
+  position:sticky;
+  top: 5px;
+  right: -50px;
   width: 70px;
+  max-width: 70px;
   height: 70px;
   background-color: #fb5849;
   display: inline-block;
