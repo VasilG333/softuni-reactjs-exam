@@ -1,0 +1,23 @@
+{
+    "556980b6-3c85-4a00-9303-2b06e8b13cca": {
+        "name": "Fresh Chicken Salad",
+        "ingredients": "Lorem ipsum dolor sit amet, consectetur koit adipiscing elit, sed do.",
+        "imageUrl": "https://www.the-girl-who-ate-everything.com/wp-content/uploads/2019/08/chicken-salad-22.jpg",
+        "price": "10.50",
+        "_id": "556980b6-3c85-4a00-9303-2b06e8b13cca"
+    },
+    "df9e7eaf-4375-4b59-9fca-646b4ac110b1": {
+        "name": "Eggs Omelette",
+        "ingredients": "Eggs and some herbs",
+        "imageUrl": "https://www.simplyrecipes.com/thmb/S_UML7GX7JQDl5wLTAmKKNh1rjs=/2000x1334/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg",
+        "price": "6.50",
+        "_id": "df9e7eaf-4375-4b59-9fca-646b4ac110b1"
+    },
+    "c97f719a-48e1-4630-b973-ce4508ccb79a": {
+        "name": "Fruit Salad",
+        "ingredients": "Many types of fruits",
+        "imageUrl": "https://www.cookingclassy.com/wp-content/uploads/2019/05/fruit-salad-2.jpg",
+        "price": "11.50",
+        "_id": "c97f719a-48e1-4630-b973-ce4508ccb79a"
+    }
+}

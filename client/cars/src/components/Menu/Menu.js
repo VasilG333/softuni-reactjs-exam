@@ -3,11 +3,18 @@ import { useSearchParams } from "react-router-dom";
 import { Breakfast } from "./Meals/Breakfast";
 import { Dinner } from "./Meals/Dinner";
 import { Lunch } from "./Meals/Lunch";
+import * as mealService from "../../services/mealService"
+import { useEffect, useState } from "react";
 
 export const Menu = (props) => {
     const [searchParams] = useSearchParams();
-    const meal = searchParams.get('meal')
-    console.log(meal);
+    const [meals, setMeals] = useState();
+    const query = searchParams.get('meal')
+    useEffect(() => {
+        setMeals(mealService.getAll());
+        console.log(meals);
+    }, [])
+
     return (
         <section className="section" id="offers">
             <div className="container">
@@ -53,11 +60,11 @@ export const Menu = (props) => {
                             </div>
                             <div className="col-lg-12">
                                 <section className="tabs-content">
-                                    {meal == 'breakfast'
+                                    {query === 'breakfast'
                                         ? <Breakfast />
-                                        : meal == 'lunch'
+                                        : query === 'lunch'
                                             ? <Lunch />
-                                            : meal == 'dinner'
+                                            : query === 'dinner'
                                                 ? <Dinner />
                                                 : <Breakfast />}
                                 </section>

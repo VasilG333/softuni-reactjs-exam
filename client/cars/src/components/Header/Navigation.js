@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuthContext } from '../../contexts/AuthContext';
 
 export const Navigation = () => {
+    const { user } = useAuthContext();
     return (
         <>
             <ul className="nav">
@@ -12,16 +14,6 @@ export const Navigation = () => {
                 <li className="scroll-to-section">
                     <Link to="/about">About</Link>
                 </li>
-                {/* 
-                      <li class="submenu">
-                          <Link to="">Drop Down</Link>
-                          <ul>
-                              <li><Link to="#">Drop Down Page 1</Link></li>
-                              <li><Link to="#">Drop Down Page 2</Link></li>
-                              <li><Link to="#">Drop Down Page 3</Link></li>
-                          </ul>
-                      </li>
-                  */}
                 <li className="scroll-to-section">
                     <Link to="/menu?meals=breakfast">Menu</Link>
                 </li>
@@ -29,20 +21,28 @@ export const Navigation = () => {
                     <Link to="/chefs">Chefs</Link>
                 </li>
                 <li className="submenu">
-                    <Link to="/features">Features</Link>
+                    <Link to="/features">Staff Panel</Link>
                     <ul>
-                        <li>
-                            <Link to="#">Features Page 1</Link>
-                        </li>
-                        <li>
-                            <Link to="#">Features Page 2</Link>
-                        </li>
-                        <li>
-                            <Link to="#">Features Page 3</Link>
-                        </li>
-                        <li>
-                            <Link to="#">Features Page 4</Link>
-                        </li>
+                        {user.email
+                            ? <div id="staff">
+                                <li>
+                                    <Link to="/meals/edit">Edit Meals</Link>
+                                </li>
+                                <li>
+                                    <Link to="/logout">Waiting for idea</Link>
+                                </li>
+                                <li>
+                                    <Link to="/logout">Logout</Link>
+                                </li>
+                            </div>
+                            : <div id="guest">
+                                <li>
+                                    <Link to="/login">Login</Link>
+                                </li>
+                            </div>
+                        }
+
+
                     </ul>
                 </li>
                 {/* <li class=""><Link rel="sponsored" to="https://templatemo.com" target="_blank">External URL</Link></li> */}
