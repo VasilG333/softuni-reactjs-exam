@@ -5,15 +5,26 @@ import { Dinner } from "./Meals/Dinner";
 import { Lunch } from "./Meals/Lunch";
 import * as mealService from "../../services/mealService"
 import { useEffect, useState } from "react";
+import { Meal } from "./Meals/Meal";
 
 export const Menu = (props) => {
     const [searchParams] = useSearchParams();
-    const [meals, setMeals] = useState();
     const query = searchParams.get('meal')
+    const [queryMeals, setQueryMeals] = useState([]);
+
+    const [meals, setMeals] = useState([]);
+    
     useEffect(() => {
-        setMeals(mealService.getAll());
-        console.log(meals);
-    }, [])
+        mealService.getAll()
+            .then(res => {
+                setMeals(Object.values(res));
+            })
+    }, []);
+
+    useEffect(() => {
+        setQueryMeals(meals.filter( x => x.type == query ))
+        console.log(queryMeals);
+    }, [query]);
 
     return (
         <section className="section" id="offers">
@@ -60,13 +71,18 @@ export const Menu = (props) => {
                             </div>
                             <div className="col-lg-12">
                                 <section className="tabs-content">
-                                    {query === 'breakfast'
+                                    {/* {query === 'breakfast'
                                         ? <Breakfast />
                                         : query === 'lunch'
                                             ? <Lunch />
                                             : query === 'dinner'
                                                 ? <Dinner />
-                                                : <Breakfast />}
+                                                : <Breakfast />} */}
+                                    {meals && meals.length > 0
+                                        ? query
+                                            ? queryMeals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                            : meals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                        : <h1>There are no meals for today.</h1>}
                                 </section>
                             </div>
                         </div>

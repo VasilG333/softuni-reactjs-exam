@@ -12,7 +12,7 @@ const request = async (method, url, data) => {
         let buildRequest;
 
         if (method === 'GET') {
-            buildRequest = fetch(url, { headers });
+            buildRequest = fetch(url);
         } else {
             buildRequest = fetch(url, {
                 method,
@@ -24,10 +24,10 @@ const request = async (method, url, data) => {
             });
         }
         const response = await buildRequest;
-        console.log(data);
         console.log(response);
 
         const result = await response.json();
+        console.log(result);
 
         return result;
     } catch (error) {

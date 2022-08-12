@@ -6,17 +6,7 @@ export const Breakfast = () => {
                     <div className="row">
                         <div className="left-list">
                             <div className="col-lg-12">
-                                <div className="tab-item">
-                                    <img src={require("../../../styles/images/tab-item-01.png")} alt="" />
-                                    <h4>Fresh Chicken Salad</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur koit
-                                        adipiscing elit, sed do.
-                                    </p>
-                                    <div className="price">
-                                        <h6>$10.50</h6>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div className="col-lg-12">
                                 <div className="tab-item">
