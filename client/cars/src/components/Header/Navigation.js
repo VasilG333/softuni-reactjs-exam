@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Menu = () => {
+export const Navigation = () => {
     return (
         <>
             <ul className="nav">
@@ -23,7 +23,7 @@ export const Menu = () => {
                       </li>
                   */}
                 <li className="scroll-to-section">
-                    <Link to="/menu">Menu</Link>
+                    <Link to="/menu?meals=breakfast">Menu</Link>
                 </li>
                 <li className="scroll-to-section">
                     <Link to="/chefs">Chefs</Link>

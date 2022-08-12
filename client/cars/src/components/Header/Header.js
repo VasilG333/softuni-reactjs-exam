@@ -1,5 +1,5 @@
 import { Logo } from "./Logo";
-import { Menu } from "./Menu";
+import { Navigation } from "./Navigation";
 
 export const Header = () => {
     return (
@@ -9,7 +9,7 @@ export const Header = () => {
                     <div className="col-12">
                         <nav className="main-nav">
                             <Logo />
-                            <Menu />
+                            <Navigation />
                         </nav>
                     </div>
                 </div>
