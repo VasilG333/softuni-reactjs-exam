@@ -8,7 +8,7 @@ import { useAuthContext } from '../../contexts/AuthContext';
 export const Details = (props) => {
     const { user } = useAuthContext();
     const [meal, setMeal] = useState([]);
-    let { mealId } = useParams();
+    const { mealId } = useParams();
     useEffect(() => {
         mealService.getOne(mealId)
             .then(res => {

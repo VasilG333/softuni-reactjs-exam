@@ -4,10 +4,10 @@ const baseUrl = 'http://localhost:3030/jsonstore/reservations';
 
 export const getAll = () => request.get(baseUrl);
 
-export const getOne = (mealId) => request.get(`${baseUrl}/${mealId}`);
+export const getOne = (resId) => request.get(`${baseUrl}/${resId}`);
 
-export const create = (mealData) => request.post(baseUrl, mealData);
+export const create = (resData) => request.post(baseUrl, resData);
 
-export const edit = (mealId, mealData) => request.put(`${baseUrl}/${mealId}`, mealData);
+export const edit = (resId, resData) => request.put(`${baseUrl}/${resId}`, resData);
 
-export const remove = (mealId) => request.del(`${baseUrl}/${mealId}`);
+export const remove = (resId) => request.del(`${baseUrl}/${resId}`);

@@ -45,7 +45,7 @@ export const Navigation = () => {
                     </ul>
                 </li>
                 <li className="scroll-to-section">
-                    <Link to="/reservations">Make Reservation</Link>
+                    <Link to="/make-reservation">Make Reservation</Link>
                 </li>
             </ul>
         </>

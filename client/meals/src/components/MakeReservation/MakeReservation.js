@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import * as resService from "../../services/reservationsService"
 
-export const Reservations = () => {
+export const MakeReservation = () => {
     const navigate = useNavigate();
     const onSubmitHandler = (e) => {
         e.preventDefault();

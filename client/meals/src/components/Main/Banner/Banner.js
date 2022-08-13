@@ -11,7 +11,7 @@ export const Banner = () => {
                                 <h4>KlassyCafe</h4>
                                 <h6>THE BEST EXPERIENCE</h6>
                                 <div className="main-white-button scroll-to-section">
-                                    <Link to="/reservations">Make A Reservation</Link>
+                                    <Link to="/make-reservation">Make A Reservation</Link>
                                 </div>
                             </div>
                         </div>
