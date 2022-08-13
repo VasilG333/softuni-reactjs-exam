@@ -19,27 +19,11 @@ export const Banner = () => {
                     <div className="col-lg-8">
                         <div className="main-banner header-text">
                             <div className="Modern-Slider">
-                                {/* Item */}
                                 <div className="item">
                                     <div className="img-fill">
-                                        <img src={require("../../styles/images/slide-01.jpg")} alt="Img Missing" />
+                                        <img src={require("../../../styles/images/slide-01.jpg")} alt="Img Missing" />
                                     </div>
                                 </div>
-                                {/* // Item */}
-                                {/* Item */}
-                                {/* <div className="item">
-                                    <div className="img-fill">
-                                        <img src={require("../../styles/images/slide-02.jpg")} alt="Img Missing" />
-                                    </div>
-                                </div> */}
-                                {/* // Item */}
-                                {/* Item */}
-                                {/* <div className="item">
-                                    <div className="img-fill">
-                                        <img src={require("../../styles/images/slide-03.jpg")} alt="Img Missing" />
-                                    </div>
-                                </div> */}
-                                {/* // Item */}
                             </div>
                         </div>
                     </div>

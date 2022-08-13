@@ -1,6 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import * as resService from "../../services/reservationsService"
 
 export const Reservations = () => {
+    const navigate = useNavigate();
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        const reservationData = Object.fromEntries(new FormData(e.target));
+        resService.create(reservationData)
+            .then(() => navigate('/reservations-list'))
+            .err(err => {
+                console.log(err);
+                navigate('/404')
+            })
+    }
     return (
         <section className="section" id="reservation">
             <div className="container">
@@ -46,7 +58,7 @@ export const Reservations = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="contact-form">
-                            <form id="contact" action="" method="post">
+                            <form id="contact" method="post" onSubmit={onSubmitHandler}>
                                 <div className="row">
                                     <div className="col-lg-12">
                                         <h4>Table Reservation</h4>
@@ -57,8 +69,8 @@ export const Reservations = () => {
                                                 name="name"
                                                 type="text"
                                                 id="name"
-                                                placeholder="Your Name*"
-                                                required=""
+                                                placeholder="Your Name"
+                                                required
                                             />
                                         </fieldset>
                                     </div>
@@ -70,7 +82,7 @@ export const Reservations = () => {
                                                 id="email"
                                                 pattern="[^ @]*@[^ @]*"
                                                 placeholder="Your Email Address"
-                                                required=""
+                                                required
                                             />
                                         </fieldset>
                                     </div>
@@ -81,53 +93,46 @@ export const Reservations = () => {
                                                 type="text"
                                                 id="phone"
                                                 placeholder="Phone Number*"
-                                                required=""
+                                                required
                                             />
                                         </fieldset>
                                     </div>
                                     <div className="col-md-6 col-sm-12">
                                         <fieldset>
                                             <select
-                                                value="number-guests"
                                                 name="number-guests"
                                                 id="number-guests"
                                             >
                                                 <option value="number-guests">Number Of Guests</option>
-                                                <option name={1} id={1}>
+                                                <option name={1} id={1} value='1'>
                                                     1
                                                 </option>
-                                                <option name={2} id={2}>
+                                                <option name={2} id={2} value='2'>
                                                     2
                                                 </option>
-                                                <option name={3} id={3}>
+                                                <option name={3} id={3} value='3'>
                                                     3
                                                 </option>
-                                                <option name={4} id={4}>
+                                                <option name={4} id={4} value='4'>
                                                     4
                                                 </option>
-                                                <option name={5} id={5}>
+                                                <option name={5} id={5} value='5'>
                                                     5
                                                 </option>
-                                                <option name={6} id={6}>
+                                                <option name={6} id={6} value='6'>
                                                     6
                                                 </option>
-                                                <option name={7} id={7}>
+                                                <option name={7} id={7} value='7'>
                                                     7
                                                 </option>
-                                                <option name={8} id={8}>
+                                                <option name={8} id={8} value='8'>
                                                     8
                                                 </option>
-                                                <option name={9} id={9}>
+                                                <option name={9} id={9} value='9'>
                                                     9
                                                 </option>
-                                                <option name={10} id={10}>
+                                                <option name={10} id={10} value='10'>
                                                     10
-                                                </option>
-                                                <option name={11} id={11}>
-                                                    11
-                                                </option>
-                                                <option name={12} id={12}>
-                                                    12
                                                 </option>
                                             </select>
                                         </fieldset>
@@ -153,15 +158,15 @@ export const Reservations = () => {
                                     </div>
                                     <div className="col-md-6 col-sm-12">
                                         <fieldset>
-                                            <select value="time" name="time" id="time">
-                                                <option value="time">Time</option>
-                                                <option name="Breakfast" id="Breakfast">
+                                            <select name="time" id="time">
+                                                <option name="time">Time</option>
+                                                <option name="Breakfast" value="Breakfast" id="Breakfast">
                                                     Breakfast
                                                 </option>
-                                                <option name="Lunch" id="Lunch">
+                                                <option name="Lunch" value="Lunch" id="Lunch">
                                                     Lunch
                                                 </option>
-                                                <option name="Dinner" id="Dinner">
+                                                <option name="Dinner" value="Dinner" id="Dinner">
                                                     Dinner
                                                 </option>
                                             </select>
@@ -171,7 +176,7 @@ export const Reservations = () => {
                                         <fieldset>
                                             <textarea
                                                 name="message"
-                                                rows={6}
+                                                rows={5}
                                                 id="message"
                                                 placeholder="Message"
                                                 required=""

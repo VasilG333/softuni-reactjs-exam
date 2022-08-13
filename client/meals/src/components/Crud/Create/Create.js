@@ -1,7 +1,7 @@
-import "./AddMeal.css"
-import * as mealService from "../../../../services/mealService"
+import "./Create.css"
+import * as mealService from "../../../services/mealService"
 import { useNavigate } from "react-router-dom";
-export const AddMeal = () => {
+export const Create = () => {
     const navigate = useNavigate();
     const onSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ export const AddMeal = () => {
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
                     </select>
-                    <button className="submit_class" type="submit" form="addmeal_form">Login</button>
+                    <button className="submit_class" type="submit" form="addmeal_form">Create</button>
                 </div>
             </form>
         </div>

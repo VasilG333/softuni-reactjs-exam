@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { Breakfast } from "./Meals/Breakfast";
-import { Dinner } from "./Meals/Dinner";
-import { Lunch } from "./Meals/Lunch";
 import * as mealService from "../../services/mealService"
 import { useEffect, useState } from "react";
-import { Meal } from "./Meals/Meal";
+import { Meal } from "../Meals/Meal";
 
 export const Menu = (props) => {
     const [searchParams] = useSearchParams();
@@ -69,17 +66,15 @@ export const Menu = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-24">
-                                <article class="leaderboard">
-                                    <main class="leaderboard profiles">
-                                        {meals && meals.length > 0
-                                            ? query
-                                                ? queryMeals.map(meal => <Meal key={meal._id} meal={meal} />)
-                                                : meals.map(meal => <Meal key={meal._id} meal={meal} />)
-                                            : <h1>There are no meals for today.</h1>}
-                                    </main>
-                                </article>
-                            </div>
+                            <article className="leaderboard">
+                                <main className="leaderboard profiles">
+                                    {meals && meals.length > 0
+                                        ? query
+                                            ? queryMeals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                            : meals.map(meal => <Meal key={meal._id} meal={meal} />)
+                                        : <h1>There are no meals for today.</h1>}
+                                </main>
+                            </article>
                         </div>
                     </div>
                 </div>

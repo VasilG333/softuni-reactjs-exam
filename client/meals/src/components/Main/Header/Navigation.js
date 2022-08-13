@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 export const Navigation = () => {
     const { user } = useAuthContext();
+    const selectStyles = { menu: styles => ({ ...styles, zIndex: 999 }) };
     return (
         <>
             <ul className="nav">
@@ -15,21 +16,21 @@ export const Navigation = () => {
                     <Link to="/about">About</Link>
                 </li>
                 <li className="scroll-to-section">
-                    <Link to="/menu?meals=breakfast">Menu</Link>
+                    <Link to="/menu">Menu</Link>
                 </li>
                 <li className="scroll-to-section">
                     <Link to="/chefs">Chefs</Link>
                 </li>
-                <li className="submenu">
+                <li className="submenu" style={selectStyles}>
                     <Link to="/features">Staff Panel</Link>
                     <ul>
                         {user.email
-                            ? <div id="staff">
+                            ? <div id="staff" className="important-nav">
                                 <li>
-                                    <Link to="/meals/edit">Edit Meals</Link>
+                                    <Link to="/meals/addmeal">Add meal</Link>
                                 </li>
                                 <li>
-                                    <Link to="/addmeal">Add meal</Link>
+                                    <Link to="/reservations-list">Reservation List</Link>
                                 </li>
                                 <li>
                                     <Link to="/logout">Logout</Link>
@@ -41,12 +42,10 @@ export const Navigation = () => {
                                 </li>
                             </div>
                         }
-
-
                     </ul>
                 </li>
                 <li className="scroll-to-section">
-                    <Link to="/reservations">Contact Us</Link>
+                    <Link to="/reservations">Make Reservation</Link>
                 </li>
             </ul>
         </>

@@ -2,12 +2,6 @@ import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 
 export const Chefs = () => {
-    // const RedirectPage = (url) => {
-    //     useEffect(() => {
-    //         console.log('clicked');
-    //         window.open(url, '_blank')
-    //     }, [url])
-    // }
     return (
         <section className="section" id="chefs">
             <div className="container">
