@@ -20,7 +20,6 @@ export const Menu = (props) => {
 
     useEffect(() => {
         setQueryMeals(meals.filter(x => x.type == query))
-        console.log(queryMeals);
     }, [query]);
 
     return (

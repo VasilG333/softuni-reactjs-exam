@@ -27,7 +27,6 @@ const request = async (method, url, data) => {
         console.log(response);
 
         const result = await response.json();
-        console.log(result);
 
         return result;
     } catch (error) {

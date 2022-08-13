@@ -11,7 +11,6 @@ export const ReservationsList = () => {
         resService.getAll()
             .then(res => {
                 setReservations(Object.values(res))
-                console.log(Object.values(res));
             })
             .catch(err => {
                 console.log(err);
