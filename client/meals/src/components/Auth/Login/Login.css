@@ -17,6 +17,7 @@ h1 {
     justify-content: center;
     height: 70vh;
     width: 100%;
+    margin-top: 65px;
 }
 .form_class {
     width: 500px;

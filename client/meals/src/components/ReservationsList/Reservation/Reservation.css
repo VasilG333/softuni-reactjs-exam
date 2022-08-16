@@ -8,6 +8,7 @@
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 3px 5px -1px rgba(51, 51, 51, 0.23);
+    background-color: antiquewhite;
 }
 
 .reservation-name {
@@ -19,7 +20,7 @@
 }
 
 .reservation-ppl {
-    color: #35d8ac;
+    color: red;
     text-align: center;
     font-weight: 550;
     font-size: 27px;
